@@ -1,0 +1,16 @@
+{
+  "name": "bestbuybot",
+  "version": "1.0.0",
+  "description": "A bot to ping the best buy API and then get the user in the queue automatically ASAP.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node src\\index.js"
+  },
+  "author": "Brian Rook",
+  "license": "ISC",
+  "dependencies": {
+    "bestbuy": "^2.4.1",
+    "selenium-webdriver": "^4.0.0-beta.4"
+  }
+}

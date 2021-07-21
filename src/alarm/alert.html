@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert!</title>
+</head>
+<body>
+    <button id="alarm-play-button">Play Alert!</button>
+    <button id="chimes-play-button">Play Chimes!</button>
+</body>
+<script>
+    const alarmButton = document.getElementById('alarm-play-button');
+    alarmButton.addEventListener('click', () => {
+        const audio = new Audio('./Alarm_or_siren.ogg'); 
+        if (typeof audio.loop == 'boolean')
+        {
+            audio.loop = true;
+        }
+        else
+        {
+            audio.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+        }
+        audio.play();
+    });
+
+		const chimesButton = document.getElementById('chimes-play-button');
+		chimesButton.addEventListener('click', () => {
+        const audio = new Audio('./Windchimes.ogg'); 
+        if (typeof audio.loop == 'boolean')
+        {
+            audio.loop = true;
+        }
+        else
+        {
+            audio.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+        }
+        audio.play();
+    });
+</script>
+</html>
