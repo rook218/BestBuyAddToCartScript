@@ -83,7 +83,7 @@ class Checker {
 					addToCartClicked = false;
 					await driver.close();
 				} else if (!this.alertIsTriggered) {
-					alert('alarm');
+					this.alert('alarm');
 					this.alertIsTriggered = true;
 					const userCartButton = await driver.findElement(By.css('.add-to-cart-button'));
 					userCartButton.click();
